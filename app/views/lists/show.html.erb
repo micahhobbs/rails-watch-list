@@ -1,0 +1,9 @@
+<div class="container pt-4">
+  <div class="d-flex justify-content-between py-4">
+    <h1 class="mb-0"><%= @list.name %></h1>
+    <%= link_to "Add movie", new_list_bookmark_path(@list), class: 'btn btn-gradient'%>
+  </div>
+  <% @bookmarks.each do |bookmark| %>
+    <p><%= bookmark.movie.title %></p>
+  <% end %>
+</div>
