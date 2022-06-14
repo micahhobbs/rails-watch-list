@@ -3,7 +3,26 @@
     <h1 class="mb-0"><%= @list.name %></h1>
     <%= link_to "Add movie", new_list_bookmark_path(@list), class: 'btn btn-gradient'%>
   </div>
-  <% @bookmarks.each do |bookmark| %>
-    <p><%= bookmark.movie.title %></p>
-  <% end %>
+  <%# @bookmarks.each do |bookmark| %>
+    <%# <p>= bookmark.movie.title</p> %>
+  <%# <% end %>
+  <div class="cards py-4">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="card-movie">
+        <img src=<%= bookmark.movie.poster_url %> />
+          <div class="card-movie-infos">
+            <div>
+              <div class="d-flex justify-content-between">
+                <h2><%= bookmark.movie.title %></h2>
+                <p class=""><%= bookmark.movie.rating %> ⭐️</p>
+              </div>
+              <p class="card-movie-overview"><%= bookmark.movie.overview %></p>
+              <p class="pt-4">💬 <%= bookmark.comment %></p>
+            </div>
+            <%# <h2 class="card-movie-pricing">£99.99</h2> %>
+            <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-movie-user avatar-bordered" /> %>
+          </div>
+      </div>
+    <% end %>
+  </div>
 </div>
