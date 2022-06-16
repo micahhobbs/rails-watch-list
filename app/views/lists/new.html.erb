@@ -2,6 +2,7 @@
   <h2>Add a new list</h2>
   <%= simple_form_for @list do |f| %>
   <%= f.input :name %>
-  <%= f.submit %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn-gradient mt-3'  %>
   <% end %>
 </div>
