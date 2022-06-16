@@ -17,12 +17,23 @@
                 <p class=""><%= bookmark.movie.rating %> ⭐️</p>
               </div>
               <p class="card-movie-overview"><%= bookmark.movie.overview %></p>
-              <p class="pt-4">💬 <%= bookmark.comment %></p>
+              <div class="d-flex justify-content-between align-items-end">
+                <p class="pt-4">💬 <%= bookmark.comment %></p>
+                <%= link_to "🗑 Delete",
+                            bookmark_path(bookmark),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" },
+                            class: "text-decoration-none" %>
+              </div>
             </div>
             <%# <h2 class="card-movie-pricing">£99.99</h2> %>
             <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-movie-user avatar-bordered" /> %>
           </div>
       </div>
     <% end %>
+  </div>
+  <div class="d-flex justify-content-between py-4">
+    <h2>Reviews</h2>
+
   </div>
 </div>
